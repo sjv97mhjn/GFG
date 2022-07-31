@@ -82,62 +82,62 @@ Example  2 :
     Declare and Define
  */
 
-//
-// console.log(num) // undefined
-// // Just In Time Compilation
-// var num = 1 ; // Global Scope
-//
-// // for(;;) {
-// //     let letNum = "Block Scope";
-// // }
-//
-// console.log(letNum);
-//
-// //
-// //
-//
-// let str = "My Name";
-// let myBoolean  = true;
-// let x = null;
-// let y = undefined;
-//
-// // const str = "My constant string";
-// console.log(typeof myBoolean)   // Boolean
+
+console.log(num) // undefined
+// Just In Time Compilation
+var num = 1 ; // Global Scope
+
+// for(;;) {
+//     let letNum = "Block Scope";
+// }
+
+console.log(num);
+
 //
 //
-// // Strings
-// // Concatenation : Joining of two strings
-// let str1 = "Sajeev";
-// let str2 = "Mahajan";
-//
-// let fullName = "My name is" + str1 + " " + str2;  // My Name is Sajeev Mahajan
-// console.log(fullName);
-//
-// let fullName2 = `My Name is ${str1}  ${str2}`; // ES6
-// console.log(fullName2);
-// console.log(str1.length); // 6
-// console.log(str1.toLowerCase()); // sajeev
-// console.log(str1.toUpperCase()); //  SAJEEV
-//
-// console.log(str1.substring(0,1));  ///  S
-// console.log(fullName.split(" ")); //  ["Sajeev","]
-//
-// // Arrays
-// let myArray = [1,2,3,4,5,"my name", true];
-//
-// console.log(myArray[5]);
-//
-// myArray.push("New Element");
-// console.log(myArray);
-// myArray.unshift("At the start of the array");
-// myArray.pop();
+
+let str = "My Name";
+let myBoolean  = true;
+let x = null;
+let y = undefined;
+
+// const str = "My constant string";
+console.log(typeof myBoolean)   // Boolean
+
+
+// Strings
+// Concatenation : Joining of two strings
+let str1 = "Sajeev";
+let str2 = "Mahajan";
+
+let fullName = "My name is" + str1 + " " + str2;  // My Name is Sajeev Mahajan
+console.log(fullName);
+
+let fullName2 = `My Name is ${str1}  ${str2}`; // ES6
+console.log(fullName2);
+console.log(str1.length); // 6
+console.log(str1.toLowerCase()); // sajeev
+console.log(str1.toUpperCase()); //  SAJEEV
+
+console.log(str1.substring(0,1));  ///  S
+console.log(fullName.split(" ")); //  ["Sajeev","]
+
+// Arrays
+let myArray = [1,2,3,4,5,"my name", true];
+
+console.log(myArray[5]);
+
+myArray.push("New Element");
+console.log(myArray);
+myArray.unshift("At the start of the array");
+myArray.pop();
 
 
 
-let num = 1
+let num2 = 1
 
 
-if (num === "1") { // ==  ===
+if (num2 === "1") { // ==  ===
     console.log("Matched") // This
 } else {
     console.log("Un Matched") // This
@@ -146,7 +146,7 @@ if (num === "1") { // ==  ===
 
 let name = "myName",
     age = "25",
-    fullName = "Sajeev Mahajan";
+    fullName1 = "Sajeev Mahajan";
 
 
 // Objects
@@ -182,8 +182,8 @@ let oldObj = {
 }
 
 let num1 =10;
-let num2 = num1;
-num2 = 11;
+let num3 = num1;
+num3 = 11;
 console.log(num1) // 10
 
 
@@ -194,7 +194,7 @@ newObj.age = 10;
 
 console.log(oldObj.age); // 10
 
-let clonedObject  ; // Reference 2004 //
+let clonedObject = {}; // Reference 2004 //
 
 // Shallow Cloning
 for ( let key in obj){
@@ -221,7 +221,7 @@ for ( let key in obj){
 //
 // }
 
-let name = function(name = "Default Name",age = 0) {
+let nameFunc = function(name = "Default Name",age = 0) {
         console.log(`My name is ${name} and age ${age}`);
 };
 
@@ -234,10 +234,10 @@ let myFunc2 = name => console.log(`My name is ${name}`);
 let myFunc3 = () => console.log(`My name is `);
 
 
-name("Sajeev",10);
+
+nameFunc("Sajeev",10);
 
 // ES6
-
 myFunc("Sajeev",10);
 myFunc2("Name");
 myFunc3();
@@ -319,5 +319,7 @@ rabbit.__proto__ = animal; // sets rabbit.[[Prototype]] = animal
 
 // Rabbit --> Animal --> SomethingElse
 
-console.log(rabbit.breaths) // true
-// Task 2
+console.log(rabbit.breaths)
+// true
+// Task 2 // Asynchrous in Java Script + Basic Git Commands
+// Advance JS Concepts + JS is Async + Js non Blocking + Git Commands
