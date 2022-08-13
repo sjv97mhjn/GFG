@@ -126,24 +126,25 @@ let name;
 
 let myPromises = new Promise(function(resolve, reject){ // Producer
         setTimeout(()=>{
-            resolve(10);
-        },10000);
+            reject(10);
+        },10000); // 10 seconds
 });
 
 myPromises.then(function(result){ // Consuming
     console.log(result);
-    return result + result;
+    return result + result; // Wrapped in Promise with Resolve(result + result);
     }).then((result)=> {
     console.log(result);
     return result + result;;
     })
     .then(()=>{
-        throw new Error();
+        throw new Error(); // Wrapped in Promise with Reject(Error());
     }).then((result)=> {
     console.log("Im ignored");
     return result + result;;
     })
     .catch(function (err) {
+        // Here
         console.log(err);
         throw new Error()
     }) // If promise is rejected
@@ -164,4 +165,76 @@ window.addEventListener("unhandledrejection", function (err){
 
 })
 
+
+// Making code synchronous Callbacks and Promises
+// Async Await :
 // async - await : Next Classes
+
+// async function : Return a Promise
+async function f(){
+    return 1;  // Promise with Resolve(1)
+    // return Promise.resolve(1)
+}
+
+f()
+    .then()
+    .catch()
+    .finally();
+
+
+// Await
+// let result  = await promises;
+
+//Block 1
+async function myFunc() {
+
+    try {
+        let myPromise = new Promise((resolve, reject) => {
+            setTimeout(() => resolve(10), 10000); // Task
+        })
+
+        let myPromise2 = new Promise((resolve, reject) => {
+            setTimeout(() => resolve(10), 10000); // Task
+        })
+
+        // Await can only be used in async function
+        let result = await myPromise; // Suspend further execution until promise is settled
+        let result2 = await myPromise2;
+        //
+
+        let user
+        [] = await db.findAll({}); // return array of users  Will Suspend further execution until promise is settled
+        // Returning a promise that settle with resolve(array of users)
+
+        let userThree = await db.find({userId: user[2].id}); // Suspend further execution until promise is settled
+        // Throws Error
+        let result = await db.update({userId: userThree.id}, {name: "SHRIRAMU"});
+
+        console.log(result);
+    } catch (err) {
+
+    }
+}
+
+// Block 2
+let myPromise = new Promise((resolve,reject) => {
+    setTimeout(()=>resolve(10),10000);
+})
+
+myPromise.then((result)=>{
+    console.log(result);
+}).catch((err)=>{
+    console.log(err);
+})
+
+export let myVar = 3;
+export function hello() {
+    console.log("Hey There!");
+}
+
+
+export default class User { // just add "default"
+    constructor(name) {
+        this.name = name;
+    }
+}
