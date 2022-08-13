@@ -254,6 +254,44 @@ let oldObj2 = {
     },
     myName : name
 }
+// Shallow clone  
+let oldObj2 = {
+    name: "Sajeev", // new 
+    age : "25", // new
+    dob : "7-8-1997", // new
+    session : "GFGS- FSRNL 19", // new
+    anotherObj: {    // reference to prev object itself 
+        officeName : "Oracle"
+    },
+    myName : name
+}
+
+
+// Deep  clone  
+let oldObj2 = {
+    name: "Sajeev", // new 
+    age : "25", // new
+    dob : "7-8-1997", // new
+    session : "GFGS- FSRNL 19", // new
+    anotherObj: {    //  Shallow clone again over here so that we get comlete copy of object 
+        officeName : "Oracle"
+    },
+    myName : name
+}
+
+
+function multiple(x,y,z) {
+    return x*y*z;
+}
+
+const numbers = [1,2,4];
+
+multiple(numbers[0],numbers[1],numbers[3]);
+
+// Spread Syntax
+multiple(...numbers);
+
+
 
 // Constructor Functions  : Functions that creates objects
 function Person(firstName,lastName,dob) {
@@ -282,11 +320,18 @@ person1.getMyBirthDate();
 
 // ES6 : Classes
 
-class Animal {
+class HumanBeing {
+   constructor() {
+   }
 
+   alive() {
+       return true;
+   }
 }
 
-class PersonClass extends Animal {
+let myself = new HumanBeing();
+
+class PersonClass extends HumanBeing {
 
     constructor(firstName,lastName,dob) {
         super()
@@ -323,3 +368,67 @@ console.log(rabbit.breaths)
 // true
 // Task 2 // Asynchrous in Java Script + Basic Git Commands
 // Advance JS Concepts + JS is Async + Js non Blocking + Git Commands
+
+
+
+// This
+
+// Protype Inheritence
+let person = {
+    isAlive : true,
+    breathes() {
+        this.breathing = true
+    }
+    // Default
+    __proto__ : Object
+}
+
+let employee = {
+    name : "Sajeev",
+    __proto__ : person // Inherit all the properties of person
+}
+
+person.breathes(); //  person {  breathing : true }
+employee.breathes(); // employee {  breathing : true }
+
+for ( let key in employee){ // Inherited Properties too  // name , isAlive ...  XhasOwnProperty
+    employee.hasOwnProperty(key); // name : true , isAlive : false
+    console.log(key);
+    console.log(obj[key]);
+}
+
+Object.keys(employee); // Non Inherited Properties
+
+
+person.breathes();
+console.log(person.breathing); // true
+
+//  Try Catch
+
+try {
+  // Actual Code
+    // Fetch a file
+    // parse a file
+    // call api // 500: Invalid PayStaiton Authorization
+} catch (err) {
+    err.message //  Content of orginal error
+    err.stack // Stack Trace
+    // Error handling code
+    // Operate over err object
+    // Metrics // To Log number of time error occered
+    // Log something //
+    // Convert it to more readable error
+    // 500 -> UserId is invalid  : Please reenter userID
+}
+
+
+// If there is no err
+
+
+
+
+
+
+
+
+
