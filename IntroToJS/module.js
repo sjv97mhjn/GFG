@@ -9,3 +9,9 @@ import User from './index' // Default Import, no cur
 anything.myVar;
 
 hello()
+
+/*
+   Git init : Creates a local repository
+
+   Git Status
+ */
