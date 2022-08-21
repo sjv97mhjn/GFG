@@ -1,0 +1,33 @@
+  git inti
+  git config
+  git pull
+  git push
+  git branch <branchName>  // create a branch
+  git checkout <nameBranch> // move to new branhc
+
+  git checkout -b <newBranch> // create and move to new branch
+  git branch --set-upstream-to=origin/<branch> nodeJs // set remote branch to track local branch
+  git merge <mergeBranchName> // Current Repo , merge this to mergeBranchName
+
+
+  git cherry-pick commitId : // this is used to hand pick a commit and move to any branch of your choice
+  git stash /  git stash pop
+  git --soft reset HEAD~N //
+  git --hard reset HEAD~N //
+  git commit --amend --no-edit // Amending your commit with some new changes
+
+
+  git rm  //
+  git tag //
+  git pull --rebase //
+
+
+  /*
+  Next 2 Classes
+    Databases
+      -- SQL  : relational database
+      -- Mongo DB Document based no sql databases
+      -- Mongoose
+      -- Common Query Commands in mongo
+      -- Integration with NodeJS
+  */
