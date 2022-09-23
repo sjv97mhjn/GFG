@@ -6,7 +6,7 @@ const blogSchema = new mongoose.Schema({
    title: String,
    content: String,
    author: {type: String}, // username of user creating this blog
-   date: {type: Date, default: Date.now},
+   createdDate: {type: Date, default: Date.now},
    subTitle: String,
    imagePath: {  //rootDirectory/images/mypic.jpg
       type: String,

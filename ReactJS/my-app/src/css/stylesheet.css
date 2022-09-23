@@ -1,0 +1,22 @@
+
+.headerClass {
+    background: darkred;
+    color: white;
+    font-size: 20px;
+    font-family: 'Brush Script MT', cursive;
+    position: fixed;
+    margin-top: 0;
+    width: 100%;
+    top: 0;
+}
+
+
+.footerClass {
+    background: darkred;
+    color: white;
+    font-size: 20px;
+    font-family: 'Brush Script MT', cursive;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

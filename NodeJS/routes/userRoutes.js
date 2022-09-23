@@ -12,8 +12,8 @@ const {response} = require("express");
 let transporter = nodemailer.createTransport({
    service: 'gmail',
    auth: {
-      user: '<Email>',
-      pass: '<AppPassword>'
+      user: 'sajeev.mahajan.spam@gmail.com',
+      pass: 'ypdlqcyhfdwoblpw'
    }
 });
 
@@ -92,10 +92,16 @@ router.get("/:username",checkAuthenticationV2, (request,response) => {
     });
 });
 
-// post X Get X
-// PUT
 
-router.put("/updatePassword",(request,response)=>{
+router.put("/updatePassword/:id",(request,response)=>{
+
+    if(request.session.token != request.params.id)
+        response.send("Invalid Access");
+    else {
+        console.log("Access granted to update password !")
+        request.session.destroy();
+    }
+
     User.findOneAndUpdate({username: request.body.username},{ password: request.body.newPassword}, function(err,result){
         if(err) {
             response.send(err);
@@ -112,12 +118,14 @@ router.put("/updatePassword",(request,response)=>{
 //Assignment : Solve using Session, How ?
 router.post("/updatePassword",async (request,response)=>{
     let user = await User.findOne({username: request.body.username});
+    let randomNumber = Math.random();
+
     if (user) {
         let mailOptions = {
             from: "sajeev.mahajan.spam@gmail.com",
             to: request.body.email,
             subject: "Update Password",
-            text: "Please update your password. [PUT] http://localhost:8080/user/updatePassword Sent by nodemailer using node.js"
+            text: `Please update your password. [PUT] http://localhost:8080/user/updatePassword?id=${randomNumber}  Sent by nodemailer using node.js`
         }
 
         transporter.sendMail(mailOptions, function(error,result) {
@@ -126,6 +134,9 @@ router.post("/updatePassword",async (request,response)=>{
                 response.send(error);
             } else {
                 console.log("Email sent : " + result.response);
+                // Initialise the session
+                request.session.token = randomNumber;
+                // request.session.tokenExpirationTime = new Date() + 10 * 60 * 1000;
                 response.send(result.response);
             }
         })
