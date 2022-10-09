@@ -1,3 +1,4 @@
+import '../css/stylesheet.css';
 
 
 function List({item}){

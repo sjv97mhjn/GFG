@@ -1,12 +1,12 @@
 
 import '../css/stylesheet.css';
-
+import {Link} from "react-router-dom";
 
 function Header() {
     return (
         <div className="headerClass">
-            <h1 style={{ display: "inline-block" }} > My Blogging Website</h1>
-            <h1 style={{ display: "inline-block", float: "right" }}> Login / Sign Up </h1>
+            <Link to="/"><h1 style={{ display: "inline-block", color: "white"}} > My Blogging Website</h1></Link>
+            <Link to="/newBlog"><h1 style={{ display: "inline-block", float: "right" , color: "white"}}> New Blog </h1></Link>
         </div>
     )
 }
