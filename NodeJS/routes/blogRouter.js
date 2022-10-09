@@ -1,5 +1,5 @@
 let express = require("express")
-
+// Add New Blog
 const User = require("../models/user");
 const Blog = require("../models/blog");
 let checkAuthenticationV2 = require("../middleWares/checkAuthMiddleware");
@@ -29,7 +29,7 @@ router.post("/addBlog",async (request,response)=> {
 // Query, Params
 router.get("/getAllBlogs",(request,response)=>{
 
-    Blog.find({username: request.session.username},(err,result)=>{
+    Blog.find({},(err,result)=>{
         if(err) {
             response.send(err);
         } else {

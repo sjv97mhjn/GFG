@@ -1,6 +1,9 @@
 let express = require("express"); // express modules, importing express object
 let app = express(); // creating object of this express class
 let bodyParser = require("body-parser");
+const cors = require("cors");
+
+app.use(cors());
 
 let basicRouter = require("./routes/basicRoutes");
 let fileRouter = require("./routes/fileRoutes");
@@ -27,7 +30,7 @@ const db = mongoose.connection;
 
 db.on("error", console.error.bind(console, "Connection error: "));
 db.once("open", function () {
-    console.log("Connected successfully");
+    console.log("Database Connected successfully");
 })
 
 /*
