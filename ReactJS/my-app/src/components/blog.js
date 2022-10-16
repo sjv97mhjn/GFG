@@ -8,6 +8,8 @@ function Blog({item}) {
 
     const onClickHandler = () => {
         setTitle("Changed Title");
+        // fetch api to load date
+        // item.id --> item._id
     }
 
 

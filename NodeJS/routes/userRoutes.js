@@ -74,9 +74,9 @@ router.post("/login",async (request,response) => {
         // create session over here !
         request.session.username = user.username;
         console.log(request.session);
-        response.send("User is authenticated!");
+        response.send("User is authenticated!").status(200);
     } else {
-        response.send("No user found !");
+        response.send("No user found !").status(501);
     }
 });
 

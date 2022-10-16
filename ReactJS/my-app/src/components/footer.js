@@ -12,4 +12,6 @@ function Footer(){
 //     }
 // }
 
+// Componentizing our React app
+
 export default Footer;
