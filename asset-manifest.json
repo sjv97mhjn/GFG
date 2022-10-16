@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/GFG/static/css/main.cad081bb.css",
+    "main.js": "/GFG/static/js/main.dfe17f1d.js",
+    "index.html": "/GFG/index.html",
+    "main.cad081bb.css.map": "/GFG/static/css/main.cad081bb.css.map",
+    "main.dfe17f1d.js.map": "/GFG/static/js/main.dfe17f1d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cad081bb.css",
+    "static/js/main.dfe17f1d.js"
+  ]
+}
